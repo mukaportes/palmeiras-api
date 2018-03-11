@@ -4,12 +4,13 @@ const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const Schema = mongoose.Schema
 
-const jogadoresSchema = new Schema({
+const jogadorSchema = new Schema({
     nomeJogador: { type: String },
 	nome: { type: String },
 	posicao: { type: String },
     clubeAtual: { type: Number },
-    naturalidade: { type: String },
+    cidade: { type: String },
+    estado: { type: String },
     dataNascimento: { type: String },
     altura: { type: Number },
     numero: { type: Number },
@@ -31,7 +32,7 @@ const jogadoresSchema = new Schema({
     ],
 })
 
-jogadoresSchema.plugin(AutoIncrement, {inc_field: 'id'})
+jogadorSchema.plugin(AutoIncrement, {inc_field: 'id'})
 
-export const Jogadores = mongoose.model('Jogadores', jogadoresSchema)
-export default Jogadores
+export const Jogador = mongoose.model('jogadores', jogadorSchema)
+export default Jogador
