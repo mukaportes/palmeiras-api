@@ -37,7 +37,7 @@ const getByIdJogador = {
 }
 
 const getByNomeJogador = {
-    type: jogadorType,
+    type: new GraphQLList(jogadorType),
     description: 'GET by nome jogador',
     args: {
         nome: {
@@ -47,10 +47,25 @@ const getByNomeJogador = {
     },
     resolve: async(_, args, context) => {
         let result = await instanceRepository.getByNome(args.nome)
-        return result[0]
+        return result
+    }
+}
+
+const getByPosicaoJogador = {
+    type: new GraphQLList(jogadorType),
+    description: 'GET by posicao jogador',
+    args: {
+        posicao: {
+            type: GraphQLInt,
+            description: 'Posição do jogador'
+        }
+    },
+    resolve: async(_, args, context) => {
+        let result = await instanceRepository.getByPosicao(args.posicao)
+        return result
     }
 }
 
 export { 
-    getAllJogador, getByIdJogador, getByNomeJogador
+    getAllJogador, getByIdJogador, getByNomeJogador, getByPosicaoJogador
 }

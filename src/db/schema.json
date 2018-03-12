@@ -69,9 +69,40 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
-                "name": "Jogador",
-                "ofType": null
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Jogador",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "getByPosicaoJogador",
+              "description": "GET by posicao jogador",
+              "args": [
+                {
+                  "name": "posicao",
+                  "description": "Posição do jogador",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Jogador",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null

@@ -27,6 +27,18 @@ class JogadorRepository {
             return error
         }
     }
+
+    async getByPosicao(posicao) {
+        try {
+            let result = await JogadorModel.find({ 
+                posicao: posicao 
+            })
+            // console.warn('jogador by posicao', result)
+            return result
+        } catch (error) {
+            return error
+        }
+    }
 }
 
 export default JogadorRepository;
