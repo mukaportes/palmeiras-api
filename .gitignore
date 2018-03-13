@@ -58,4 +58,4 @@ typings/
 .env
 
 # seed files
-src/db/seeds/*
+# src/db/seeds/*
